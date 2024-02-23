@@ -12,7 +12,7 @@ public class Book {
     private String title;
     private String editorial;
     @ManyToOne()
-    @JoinColumn(name = "author_id", nullable = true)
+    //@JoinColumn(name = "author_id", nullable = true)
     private Author author;
     public Book(){
     }

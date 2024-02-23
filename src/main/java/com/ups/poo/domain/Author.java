@@ -2,9 +2,7 @@ package com.ups.poo.domain;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 public class Author {
@@ -13,8 +11,9 @@ public class Author {
     private Long id;
     private String name;
     private String lastname;
-    @OneToMany(mappedBy = "author")
-    private List<Book> books = new ArrayList<Book>();
+    @OneToMany
+    @JoinColumn(name = "author")
+    private Set<Book> books = new HashSet<>();
     public Author(){
 
     }
@@ -23,10 +22,12 @@ public class Author {
         this.lastname = lastname;
     }
 
-    public Author(String name, String lastname, List<Book> books) {
-        this.name = name;
-        this.lastname = lastname;
-        this.books = books;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -45,11 +46,11 @@ public class Author {
         this.lastname = lastname;
     }
 
-    public List<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 
