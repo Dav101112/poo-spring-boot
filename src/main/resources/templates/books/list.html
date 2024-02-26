@@ -25,11 +25,14 @@
     <tr>
         <th>Title</th>
         <th>Editorial</th>
+        <th>Author</th>
     </tr>
     <tr>
     <tr th:each="book: ${books}">
         <th th:text="${book.title}"></th>
         <th th:text="${book.editorial}"></th>
+        <th th:text="${book.authorDTO.name + ' ' +book.authorDTO.lastname}"></th>
+
     </tr>
 
 </table>
