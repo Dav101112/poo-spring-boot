@@ -1,5 +1,6 @@
 package com.ups.poo.domain;
 
+import com.ups.poo.dto.AuthorDTO;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -21,7 +22,6 @@ public class Book {
         this.title = title;
         this.editorial = editorial;
     }
-
     public String getTitle() {
         return title;
     }
@@ -75,4 +75,5 @@ public class Book {
                 ", editorial='" + editorial + '\'' +
                 '}';
     }
+
 }

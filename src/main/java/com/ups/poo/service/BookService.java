@@ -23,10 +23,16 @@ public class BookService {
 
     public List<BookDTO> findAll() {
         List<BookDTO> bookList = new ArrayList<>();
-        Iterable<Book> bookIterable = bookRepository.findAll();
-        for (Book book : bookIterable) {
-            BookDTO bookDTO = new BookDTO(book.getTitle(), book.getEditorial());
-            bookList.add(bookDTO);
+        Iterable<Book> books= bookRepository.findAll();
+        for (Book bookI : books) {
+            BookDTO book = new BookDTO();
+            book.setTitle(bookI.getTitle());
+            book.setEditorial(book.getEditorial());
+            AuthorDTO authorDTO = new AuthorDTO();
+            authorDTO.setName(bookI.getAuthor().getName());
+            authorDTO.setLastname(bookI.getAuthor().getLastname());
+            book.setAuthorDTO(authorDTO);
+            bookList.add(book);
         }
         return bookList;
     }
