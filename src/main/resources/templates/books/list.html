@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Books</title>
+    <style>
+        body{
+        background-color: green;
+        }
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        tr:first-child {
+        background-color: lightskyblue;
+        }
+        tr{
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Books List</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Editorial</th>
+    </tr>
+    <tr>
+    <tr th:each="book: ${books}">
+        <th th:text="${book.title}"></th>
+        <th th:text="${book.editorial}"></th>
+    </tr>
+
+</table>
+</body>
+</html>

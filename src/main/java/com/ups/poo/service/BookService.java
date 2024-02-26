@@ -27,7 +27,7 @@ public class BookService {
         for (Book bookI : books) {
             BookDTO book = new BookDTO();
             book.setTitle(bookI.getTitle());
-            book.setEditorial(book.getEditorial());
+            book.setEditorial(bookI.getEditorial());
             AuthorDTO authorDTO = new AuthorDTO();
             authorDTO.setName(bookI.getAuthor().getName());
             authorDTO.setLastname(bookI.getAuthor().getLastname());
